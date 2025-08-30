@@ -115,7 +115,7 @@
                         <div id="collapseBodega" class="collapse" data-parent="#accordionSidebar">
                             <div class="bg-white py-2 collapse-inner rounded">
                                 <h6 class="collapse-header">Bodega:</h6>
-                                <a class="collapse-item" href="#">Ubicar Paquetes</a>
+                                <a class="collapse-item" href="{{ route('bodega.index') }}">Ubicar Paquetes</a>
                             </div>
                         </div>
                     </li>

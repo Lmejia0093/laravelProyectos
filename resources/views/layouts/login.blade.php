@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- ¡Clave para el diseño responsive! -->
     <title>Login</title>
     <link rel="icon" type="image/x-icon" href="{{ asset('box_send.ico') }}?v=2">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -10,18 +11,22 @@
 
     <style>
         body {
-            background: linear-gradient(135deg, #4e73df, #224abe);
+            background: linear-gradient(135deg, #FFD700, #000000); /* Amarillo dorado a negro */
             height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #000; /* texto negro por defecto */
+            margin: 0;
         }
 
         .card {
             border-radius: 1rem;
-            box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.25);
+            box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.7);
             animation: fadeIn 0.6s ease-in-out;
+            background-color: #fff;
+            color: #000;
         }
 
         @keyframes fadeIn {
@@ -37,31 +42,42 @@
         }
 
         .btn-primary {
-            background-color: #4e73df;
+            background-color: #FFD700; /* amarillo */
+            color: #000;
             border: none;
             transition: all 0.3s ease;
+            font-weight: bold;
         }
 
         .btn-primary:hover {
-            background-color: #2e59d9;
+            background-color: #FFC300; /* amarillo más oscuro */
+            color: #000;
             transform: scale(1.03);
         }
 
         .logo-circle {
             width: 80px;
             height: 80px;
-            background: #fff;
+            background: #000; /* negro */
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             margin: 0 auto 20px;
-            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+            box-shadow: 0px 4px 12px rgba(255, 215, 0, 0.6); /* sombra amarilla */
         }
 
         .logo-circle i {
             font-size: 40px;
-            color: #4e73df;
+            color: #FFD700; /* amarillo */
+        }
+
+        .text-dark {
+            color: #000 !important;
+        }
+
+        .text-muted {
+            color: #444 !important;
         }
     </style>
 </head>
@@ -69,7 +85,7 @@
 <body>
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-xl-5 col-lg-6 col-md-8">
+            <div class="col-xl-5 col-lg-6 col-md-8 col-sm-10 col-12">
                 <div class="card border-0 shadow-lg">
                     <div class="card-body p-5">
                         <!-- Logo -->
@@ -101,13 +117,13 @@
                             <div class="form-group mb-3">
                                 <label for="email" class="form-label">Correo electrónico</label>
                                 <input type="email" class="form-control" id="email"
-                                    name="email" placeholder="ejemplo@correo.com" required>
+                                       name="email" placeholder="ejemplo@correo.com" required>
                             </div>
 
                             <div class="form-group mb-4">
                                 <label for="password" class="form-label">Contraseña</label>
                                 <input type="password" class="form-control" id="password"
-                                    name="password" placeholder="********" required>
+                                       name="password" placeholder="********" required>
                             </div>
 
                             <button type="submit" class="btn btn-primary w-100">

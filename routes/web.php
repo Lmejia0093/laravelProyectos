@@ -7,6 +7,8 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\PerfilController;
 use App\Http\Controllers\EtiquetaController;
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\BodegaController;
 
 
 Route::get('/', function () {
@@ -19,10 +21,7 @@ Route::post('/login', [AuthController::class, 'login'])->name('login.post')->mid
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
 
-Route::get('/dashboard', function() {
-    return view('app.dashboardGeneral');
-})->name('index.dashboardGeneral')
-  ->middleware(['auth', 'active']); // <- aquí agregas middleware
+Route::get('/dashboard',[DashboardController::class, 'index'])->name('index.dashboardGeneral')->middleware(['auth', 'active']); // <- aquí agregas middleware
 
 
 //////// Recepcion   ///////////
@@ -51,6 +50,21 @@ Route::prefix('perfil')->middleware(['auth','active'])->group(function () {
     Route::get('/', [PerfilController::class, 'index'])->name('perfil');
     Route::put('/', [PerfilController::class, 'update'])->name('perfil.update');
 });
+
+
+////////bodega  //////
+
+Route::prefix('bodega')->name('bodega.')->middleware('auth','active','role:bodega')->group(function () {
+    // Mostrar paquetes recepcionados
+    Route::get('/', [BodegaController::class, 'index'])->name('index');
+
+    // Asignar ubicación a un paquete
+    Route::post('/asignar/{id}', [BodegaController::class, 'asignarUbicacion'])->name('asignar');
+});
+
+
+
+/////fin bodega ////
 
 
 

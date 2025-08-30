@@ -139,7 +139,7 @@ public function store(Request $request)
 
     public function PaquetesIngresados(){
          // Traer todos los paquetes, los más recientes primero
-    $paquetes = Paquete::orderBy('created_at', 'desc')->get();
+    $paquetes = Paquete::where('estatus','recepcionado')->orderBy('created_at', 'desc')->get();
         return view('app.recepcion.paquetesingresados',compact('paquetes'));
     }
 }

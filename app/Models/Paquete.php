@@ -25,4 +25,8 @@ class Paquete extends Model
         'estatus',
         'comentario',
     ];
+
+    public function ubicacion(){
+        return $this->belongsTo(Ubicacion::class);
+    }
 }
