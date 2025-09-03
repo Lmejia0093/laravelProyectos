@@ -5,13 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- ¡Clave para el diseño responsive! -->
     <title>Login</title>
-    <link rel="icon" type="image/x-icon" href="{{ asset('box_send.ico') }}?v=2">
+    <link rel="shortcut icon" href="{{ asset('faviconEdunotas.ico') }}" type="image/x-icon">
+    <link rel="shortcut icon" href="{{ asset('faviconEdunotas.ico') }}" type="image/x-icon">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
 
     <style>
         body {
-            background: linear-gradient(135deg, #FFD700, #000000); /* Amarillo dorado a negro */
+            background: linear-gradient(135deg, #195231, #000000); /* Amarillo dorado a negro */
             height: 100vh;
             display: flex;
             align-items: center;
@@ -42,7 +43,7 @@
         }
 
         .btn-primary {
-            background-color: #FFD700; /* amarillo */
+            background-color: #195231; /* amarillo */
             color: #000;
             border: none;
             transition: all 0.3s ease;
@@ -50,7 +51,7 @@
         }
 
         .btn-primary:hover {
-            background-color: #FFC300; /* amarillo más oscuro */
+            background-color: #195231; /* amarillo más oscuro */
             color: #000;
             transform: scale(1.03);
         }
@@ -64,12 +65,12 @@
             align-items: center;
             justify-content: center;
             margin: 0 auto 20px;
-            box-shadow: 0px 4px 12px rgba(255, 215, 0, 0.6); /* sombra amarilla */
+            box-shadow: 0px 4px 12px rgba(16, 105, 28, 0.6); /* sombra amarilla */
         }
 
         .logo-circle i {
             font-size: 40px;
-            color: #FFD700; /* amarillo */
+            color: #195231; /* amarillo */
         }
 
         .text-dark {
@@ -90,12 +91,13 @@
                     <div class="card-body p-5">
                         <!-- Logo -->
                         <div class="logo-circle">
-                            <i class="fas fa-box"></i>
+
+                            <img src="{{ asset('faviconEdunotas.ico') }}" alt="">
                         </div>
 
                         <!-- Título -->
                         <div class="text-center mb-4">
-                            <h1 class="h4 text-dark fw-bold">Iniciar Sesión</h1>
+                            <h1 class="h4 text-dark fw-bold">App eduNotas</h1>
                             <p class="text-muted">Accede con tus credenciales</p>
                         </div>
 
@@ -129,6 +131,7 @@
                             <button type="submit" class="btn btn-primary w-100">
                                 <i class="fas fa-sign-in-alt"></i> Ingresar
                             </button>
+                            <a href="{{ route('landing') }}" style="color: gray;">Regresar</a>
                         </form>
                     </div>
                 </div>

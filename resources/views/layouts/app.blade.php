@@ -7,9 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <title>@yield('title')</title>
+<link rel="shortcut icon" href="{{ asset('faviconEdunotas.ico') }}" type="image/x-icon">
 
-    <link rel="icon" type="image/x-icon" href="{{ asset('box_send.ico') }}?v=2">
 
+    <link rel="shortcut icon" href="{{ asset('faviconEdunotas.ico') }}" type="image/x-icon">
     <!-- Bootstrap 4.6 CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.6.2/css/bootstrap.min.css" rel="stylesheet">
 
@@ -68,18 +69,18 @@
 
             <!-- Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center"
-                href="{{ route('index.dashboardGeneral') }}">
+                href="#">
                 <div class="sidebar-brand-icon rotate-n-15">
-                    <i class="fa-solid fa-people-carry-box" style="color: #FFD43B;"></i>
+                  <i class="fa-solid fa-graduation-cap" style="color: #195231;"></i>
                 </div>
-                <div class="sidebar-brand-text mx-3" style="color: #FFD43B;">Telo LLevo</div>
+                <div class="sidebar-brand-text mx-3" style="color: #195231;">EduNotas</div>
             </a>
 
             <hr class="sidebar-divider my-0">
 
             <li class="nav-item">
                 <a class="nav-link" href="{{ route('index.dashboardGeneral') }}">
-                    <i class="fa-solid fa-chart-line" style="color: #FFD43B;"></i>
+                    <i class="fa-solid fa-chart-line" style="color:#195231;"></i>
                     <span>Dashboard</span>
                 </a>
             </li>
@@ -88,62 +89,62 @@
             <div class="sidebar-heading">Panel Operativo</div>
 
             @auth
-                @if (auth()->user()->hasRole(['admin','recepcion','supervisor']))
+                @if (auth()->user()->hasRole(['admin','supervisor','director','maestro','recepcion']))
                     <li class="nav-item">
                         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseRecepcion"
                             aria-expanded="false" aria-controls="collapseRecepcion">
-                            <i class="fa-solid fa-parachute-box" style="color: #FFD43B;"></i>
+                            <i class="fa-solid fa-parachute-box" style="color: #195231;"></i>
                             <span>Recepcion</span>
                         </a>
                         <div id="collapseRecepcion" class="collapse" data-parent="#accordionSidebar">
                             <div class="bg-white py-2 collapse-inner rounded">
-                                <h6 class="collapse-header">Recepcion:</h6>
-                                <a class="collapse-item" href="{{ route('recepcion') }}">Ingresar Paquetes</a>
-                                <a class="collapse-item" href="{{ route('recepcion.paquetesingresados') }}">Paquetes Ingresados</a>
+                                <h6 class="collapse-header">Recepcion de Alumnos:</h6>
+                                <a class="collapse-item" href="{{ route('recepcion') }}">Nuevo Alumno</a>
+                                <a class="collapse-item" href="#">Notas</a>
                             </div>
                         </div>
                     </li>
                 @endif
 
-                @if (auth()->user()->hasRole(['admin','bodega','supervisor']))
+                @if (auth()->user()->hasRole(['admin','supervisor','director','maestro']))
                     <li class="nav-item">
                         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseBodega"
                             aria-expanded="false" aria-controls="collapseBodega">
-                            <i class="fa-solid fa-boxes-stacked" style="color: #FFD43B;"></i>
-                            <span>Bodega</span>
+                            <i class="fa-solid fa-boxes-stacked" style="color: #195231;"></i>
+                            <span>Materias</span>
                         </a>
                         <div id="collapseBodega" class="collapse" data-parent="#accordionSidebar">
                             <div class="bg-white py-2 collapse-inner rounded">
-                                <h6 class="collapse-header">Bodega:</h6>
-                                <a class="collapse-item" href="{{ route('bodega.index') }}">Ubicar Paquetes</a>
+                                <h6 class="collapse-header">Materias:</h6>
+                                <a class="collapse-item" href="#">Tabla de materias</a>
                             </div>
                         </div>
                     </li>
                 @endif
 
-                @if (auth()->user()->hasRole(['admin','ruteo','supervisor']))
+                @if (auth()->user()->hasRole(['admin','supervisor','director','maestro','alumnos']))
                     <li class="nav-item">
                         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseRuteo"
                             aria-expanded="false" aria-controls="collapseRuteo">
-                            <i class="fa-solid fa-dolly" style="color: #FFD43B;"></i>
-                            <span>Ruteo</span>
+                            <i class="fa-solid fa-dolly" style="color: #195231;"></i>
+                            <span>Notas</span>
                         </a>
                         <div id="collapseRuteo" class="collapse" data-parent="#accordionSidebar">
                             <div class="bg-white py-2 collapse-inner rounded">
                                 <h6 class="collapse-header">Ruteo:</h6>
-                                <a class="collapse-item" href="#">Paquetes de Ruta</a>
-                                <a class="collapse-item" href="#">No Recibidos</a>
+                                <a class="collapse-item" href="#">ver Nota</a>
+
                             </div>
                         </div>
                     </li>
                 @endif
 
-                @if (auth()->user()->hasRole(['admin','supervisor']))
+                @if (auth()->user()->hasRole(['admin','supervisor','director']))
                     <li class="nav-item">
                         <a class="nav-link collapsed" href="#" data-toggle="collapse"
                             data-target="#collapseconfiguraciones" aria-expanded="false"
                             aria-controls="collapseconfiguraciones">
-                            <i class="fa-solid fa-gear" style="color: #FFD43B;"></i>
+                            <i class="fa-solid fa-gear" style="color: #195231;"></i>
                             <span>Configuraciones</span>
                         </a>
                         <div id="collapseconfiguraciones" class="collapse" data-parent="#accordionSidebar">
@@ -151,7 +152,7 @@
                                 <h6 class="collapse-header">Administración:</h6>
                                 <a class="collapse-item" href="#">Horarios</a>
                                 <a class="collapse-item" href="#">Precios</a>
-                                <a class="collapse-item" href="#">Categoría</a>
+                                <a class="collapse-item" href="#">Materias</a>
                             </div>
                         </div>
                     </li>
@@ -162,7 +163,7 @@
                         <a class="nav-link collapsed" href="#" data-toggle="collapse"
                             data-target="#collapseAdministracion" aria-expanded="false"
                             aria-controls="collapseAdministracion">
-                            <i class="fa-solid fa-user-gear" style="color: #FFD43B;"></i>
+                            <i class="fa-solid fa-user-gear" style="color: #195231;"></i>
                             <span>Administracion</span>
                         </a>
                         <div id="collapseAdministracion" class="collapse" data-parent="#accordionSidebar">
@@ -195,17 +196,8 @@
                     </button>
 
                     <ul class="navbar-nav ml-auto">
-                        <li class="nav-item d-flex align-items-center">
-                            <form action="{{ route('recepcion.BuscarPaquetes') }}" method="GET" class="d-flex">
-                                <input type="text" name="tracking-number" class="form-control me-2"
-                                    placeholder="Buscar paquete..." required>
-                                <button type="submit" class="btn btn-warning">
-                                    <i class="fa-solid fa-magnifying-glass"></i> Buscar
-                                </button>
-                            </form>
-                        </li>
 
-                        <div class="topbar-divider d-none d-sm-block"></div>
+
 
                         <!-- Nav Item - User Info -->
                         @auth
@@ -268,8 +260,8 @@
             <footer class="sticky-footer bg-white">
                 <div class="container my-auto">
                     <div class="text-center my-auto">
-                        <span>Copyright &copy; DM503 2025</span><br>
-                        <small>Desarrollado por DM503</small>
+                        <span>Copyright &copy; Grupo60</span><br>
+                        <small>Desarrollado por EsitGrupo60</small>
                     </div>
                 </div>
             </footer>

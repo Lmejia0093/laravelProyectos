@@ -4,7 +4,7 @@
 <div class="container py-5">
    <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-0 text-gray-800">Control de envios</h1>
+                        <h1 class="h3 mb-0 text-gray-800">Control de Alumnos</h1>
                     </div>
 
                     <div class="row">
@@ -16,11 +16,11 @@
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
                                             <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                                                paquetes en Recepcion</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $CantidadPaquetes }}</div>
+                                                Alumnos</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800">700</div>
                                         </div>
                                         <div class="col-auto">
-                                          <i class="fa-solid fa-people-carry-box fa-2x "></i>
+                                     <i class="fa-solid fa-users fa-2x " style="color: #63E6BE;"></i>
                                         </div>
                                     </div>
                                 </div>
@@ -34,11 +34,11 @@
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
                                             <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
-                                                En Ruta</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">200</div>
+                                                Matriculados en Cursos</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800">20</div>
                                         </div>
                                         <div class="col-auto">
-                                          <i class="fa-solid fa-dolly fa-2x"></i>
+                                      <i class="fa-regular fa-id-card fa-2xl" style="color: #63E6BE;"></i>
                                         </div>
                                     </div>
                                 </div>
@@ -51,7 +51,7 @@
                                 <div class="card-body">
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
-                                            <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Remuneraciones Para Entregar
+                                            <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Refuerzos
                                             </div>
                                             <div class="row no-gutters align-items-center">
                                                 <div class="col-auto">
@@ -61,7 +61,7 @@
                                             </div>
                                         </div>
                                         <div class="col-auto">
-                                            <i class="fas fa-clipboard-list fa-2x"></i>
+                                           <i class="fa-solid fa-people-pulling fa-2xl" style="color: #f7d308;"></i>
                                         </div>
                                     </div>
                                 </div>
@@ -75,11 +75,11 @@
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
                                             <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
-                                                Paquetes No Retirados</div>
+                                                Reprobados</div>
                                             <div class="h5 mb-0 font-weight-bold text-gray-800">18</div>
                                         </div>
                                         <div class="col-auto">
-                                           <i class="fa-solid fa-face-frown fa-2x"></i>
+                                           <i class="fa-solid fa-face-sad-cry fa-2xl" style="color: #f70202;"></i>
                                         </div>
                                     </div>
                                 </div>
